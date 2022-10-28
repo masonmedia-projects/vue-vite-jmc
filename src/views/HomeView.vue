@@ -1,11 +1,35 @@
 <script setup>
-  import { storeToRefs } from 'pinia'
-  import { useTextStore } from '../stores/text'
+import { onMounted } from 'vue'
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
 
-  const { content, loading, error } = storeToRefs(useTextStore())
-  const { fetchData } = useTextStore()
+import { storeToRefs } from 'pinia'
+import { useTextStore } from '../stores/text'
 
-  fetchData()
+const { content, loading, error } = storeToRefs(useTextStore())
+const { fetchData } = useTextStore()
+
+fetchData()
+
+onMounted(() => {
+  gsap.to("#banner h1", {
+    duration: 1.5,
+    x: 100,
+  });
+  // gsap.utils.toArray(".up").forEach(layer => {
+  //               gsap.from(layer, {
+  //               y: 70,
+  //               opacity: 0,
+  //               stagger: 0.3,
+  //               ease: "power1.inOut",
+  //               scrollTrigger: {
+  //                   trigger: layer,
+  //               }
+  //           });
+  //       })
+})
+  
 
 // import { ref, reactive, onMounted } from 'vue'
 // // let content = ref(null)
@@ -42,7 +66,7 @@
 
           <!-- hero -->
           <div id="banner" class="row min-vh-100 mt-5 mx-0 w-100">
-            <div class="col-lg-6 p-5 bg-sand-gradient d-flex flex-column justify-content-center align-items-stretch text-left mt-4 mt-lg-0 min-vh-75">
+            <div class="col-lg-6 p-5 bg-sand d-flex flex-column justify-content-center align-items-stretch text-left mt-4 mt-lg-0 min-vh-75">
               <h1 class="site-title font-weight-bold" v-html="content.hero.title"></h1>
               <h3 class="site-subtitle text-dark my-3" v-html="content.hero.subtitle"></h3>
               <div>
