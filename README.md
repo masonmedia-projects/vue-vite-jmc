@@ -1,48 +1,9 @@
 # vue-vite-jmc
 
-This template should help get you started developing with Vue 3 in Vite.
+<img src="public/jmc-homepage.png"
+     alt="Jen Mason Consulting homepage banner photo"
+     style="width: 100%; float: left; margin: 0 auto;" />
 
-## Recommended IDE Setup
+## Intro
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run build
-npm run test:e2e # or `npm run test:e2e:ci` for headless testing
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Repository for redesign of official website for Jen Mason Consulting. Tech stack uses Vue3, Vite, and Bootstrap 5.

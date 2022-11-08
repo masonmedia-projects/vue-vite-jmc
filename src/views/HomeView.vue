@@ -1,8 +1,9 @@
 <script setup>
-import { onMounted } from 'vue'
-import gsap from "gsap"
+import gsap from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
+import { onMounted } from 'vue'
+import AOS from 'aos'
 
 import { storeToRefs } from 'pinia'
 import { useTextStore } from '../stores/text'
@@ -13,21 +14,26 @@ const { fetchData } = useTextStore()
 fetchData()
 
 onMounted(() => {
-  gsap.to("#banner h1", {
-    duration: 1.5,
-    x: 100,
-  });
-  // gsap.utils.toArray(".up").forEach(layer => {
-  //               gsap.from(layer, {
-  //               y: 70,
-  //               opacity: 0,
-  //               stagger: 0.3,
-  //               ease: "power1.inOut",
-  //               scrollTrigger: {
-  //                   trigger: layer,
-  //               }
-  //           });
-  //       })
+  AOS.init({
+    offset: 0, // offset (in px) from the original trigger point
+    delay: 0, // values from 0 to 3000, with step 50ms
+    duration: 600, // values from 0 to 3000, with step 50ms
+    easing: 'ease-in-out-cubic', // default easing for AOS animations
+    mirror: true, // whether elements should animate out while scrolling past them
+  })
+//   gsap.utils.toArray(".up").forEach(layer => {
+//   gsap.from(layer, {
+//     y: 120,
+//     opacity: 0,
+    
+//     duration: 0.6,
+//     ease: "power1.inOut",
+//     scrollTrigger: {
+//       trigger: layer,
+//       scrub: 1
+//     }
+//   });
+// })
 })
   
 
@@ -67,15 +73,15 @@ onMounted(() => {
           <!-- hero -->
           <div id="banner" class="row min-vh-100 mt-5 mx-0 w-100">
             <div class="col-lg-6 p-5 bg-sand d-flex flex-column justify-content-center align-items-stretch text-left mt-4 mt-lg-0 min-vh-75">
-              <h1 class="site-title font-weight-bold" v-html="content.hero.title"></h1>
-              <h3 class="site-subtitle text-dark my-3" v-html="content.hero.subtitle"></h3>
-              <div>
-                <a :href="'#' + content.hero.btn1Link"
-                class="btn btn-outline-dark cta me-2 px-4"
-                role="button"
-                v-html="content.hero.btn1"></a>
+              <h1 data-aos="fade-up" class="up site-title font-weight-bold" v-html="content.hero.title"></h1>
+              <h3 data-aos="fade-up" data-aos-delay="200" class="up site-subtitle text-dark my-3" v-html="content.hero.subtitle"></h3>
+              <div data-aos="fade-up" data-aos-delay="400" class="up">
+                <a :href="'#' + content.hero.btn1Link">
+                  <button class="btn btn-dark cta px-4 me-2" 
+                  role="button" v-html="content.hero.btn1"></button>
+                </a>
                 <a :href="'#' + content.hero.btn2link">
-                  <div class="btn btn-dark cta px-4" role="button" v-html="content.hero.btn2"></div>
+                  <button class="btn btn-dark cta px-4" role="button" v-html="content.hero.btn2"></button>
                 </a>
               </div>
             </div>
