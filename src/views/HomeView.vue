@@ -95,8 +95,31 @@ onMounted(() => {
           </div>
 
           <!-- mission -->
+<!-- 
+<div class="row">
+  <div class="col-sm-6">
+    <form action="https://lb.benchmarkemail.com//code/lbform/" name="frmLB_BLMLZ" method="POST">
+      <label for="name">First name:</label><br>
+      <input type="text" name="lname" placeholder="John"><br>
+      <label for="email">Email:</label><br>
+      <input type="email" name="lname" placeholder="youremail@gmail.com"><br><br>
+      <input type="submit" value="Submit">
+    </form> 
+  </div>
+</div> -->
+
+
+<!-- END: Signup Form Popup Code from Benchmark Email Ver 4.0  -->
+
 
           <div class="row min-vh-100" id="mission">
+            <!-- <div class="col-sm-12">
+              <form action="https://lb.benchmarkemail.com//code/lbformnew.js?mFcQnoBFKMQ7RNuiGgq%252F%252BFcgGr0xQgnh4fU4OkXQl8t%252F5wfXxPKeqw%253D%253D">
+              <input type="text" placeholder="test">
+              <input type="email" placeholder="temail">
+              <button value="submit">Submit</button>
+              </form>
+            </div> -->
             <div class="col-lg-8 offset-lg-2 min-vh-100 p-5 center-center">
               <h5 class="up text-uppercase font-weight-bold" v-html="content.mission.microtitle"></h5>
               <h2 class="up section-title" v-html="content.mission.title"></h2>
@@ -222,7 +245,7 @@ onMounted(() => {
             <h1 class="modal-title fs-5" id="exampleModalLabel">JMC Newsletter Signup</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body p-2">
             <iframe style="width:100%; min-height:50vh;" allowfullscreen src="https://lb.benchmarkemail.com//listbuilder/signupnew?IkfHTmyPVq%252BnuC4b%252BprMCP5pwVnAjsSIWFkuV4uvWyDtO5iNRn8gS049TyW7spdJ"></iframe>
           </div>
         </div>
