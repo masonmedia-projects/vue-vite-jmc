@@ -4,6 +4,7 @@ import ScrollTrigger from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 import { onMounted } from 'vue'
 import AOS from 'aos'
+import Form from '@/components/FormTest.vue'
 
 import { storeToRefs } from 'pinia'
 import { useTextStore } from '../stores/text'
@@ -11,7 +12,7 @@ import { useTextStore } from '../stores/text'
 const { content, loading, error } = storeToRefs(useTextStore())
 const { fetchData } = useTextStore()
 
-fetchData()
+fetchData();
 
 onMounted(() => {
   AOS.init({
@@ -199,15 +200,34 @@ onMounted(() => {
             <h5 class="up text-uppercase font-weight-bold" v-html="content.contact.microtitle"></h5>
             <h1 class="section-title" v-html="content.contact.title"></h1>
             <p class="mb-4" v-html="content.contact.text"></p>
-            <a :href="content.contactbtnLink">
-              <button role="button" class="btn btn-info" v-html="content.contact.btn"></button>
-            </a>
-          </div>
+            <div class="d-flex">
+                <a :href="content.contactbtnLink">
+                <button role="button" class="btn btn-info me-2" v-html="content.contact.btn"></button>
+                </a>
+              <button class="mt-3 mt-lg-0 btn btn-light"
+                data-bs-toggle="modal" data-bs-target="#signup2">Newsletter</button>
+              </div>
+            </div>
           <div class="col-sm-12 p-0 position-relative">
             <img width="1000" height="500" class="w-100 object-fit" 
             :src="`https://content.jenmasonconsulting.ca/cockpit/storage/uploads/${content.contact.img.path}`" alt="A group jumping on a beach at sunset signifying teamwork, joy, and cameraderie.">
           </div>
         </div>
+
+        <!-- Benchmark newsletter signup Modal -->
+    <div class="modal fade" id="signup2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">JMC Newsletter Signup</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <iframe style="width:100%; min-height:50vh;" allowfullscreen src="https://lb.benchmarkemail.com//listbuilder/signupnew?IkfHTmyPVq%252BnuC4b%252BprMCP5pwVnAjsSIWFkuV4uvWyDtO5iNRn8gS049TyW7spdJ"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
 
         <!-- footer -->
 
