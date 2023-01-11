@@ -1,13 +1,12 @@
 <script setup>
+import { onMounted } from 'vue'
+import AOS from 'aos'
+import { storeToRefs } from 'pinia'
+import { useTextStore } from '../stores/text'
 import gsap from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
-import { onMounted } from 'vue'
-import AOS from 'aos'
-import Form from '@/components/FormTest.vue'
 
-import { storeToRefs } from 'pinia'
-import { useTextStore } from '../stores/text'
 
 const { content, loading, error } = storeToRefs(useTextStore())
 const { fetchData } = useTextStore()
@@ -22,19 +21,6 @@ onMounted(() => {
     easing: 'ease-in-out-cubic', // default easing for AOS animations
     mirror: true, // whether elements should animate out while scrolling past them
   })
-//   gsap.utils.toArray(".up").forEach(layer => {
-//   gsap.from(layer, {
-//     y: 120,
-//     opacity: 0,
-    
-//     duration: 0.6,
-//     ease: "power1.inOut",
-//     scrollTrigger: {
-//       trigger: layer,
-//       scrub: 1
-//     }
-//   });
-// })
 })
   
 
@@ -60,7 +46,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <main>
+    <main class="overflow-hidden">
 
       <!-- loading, error messages -->
 
@@ -88,6 +74,7 @@ onMounted(() => {
             </div>
             <div class="col-lg-6 bg-sand p-0">
               <img :src="`https://content.jenmasonconsulting.ca/cockpit/storage/uploads/${content.hero.img.path}`"
+              data-aos="fade"
               width="1000"
               height="600"
               class="w-100 img-full min-vh-50 p-0" />
@@ -121,16 +108,17 @@ onMounted(() => {
               </form>
             </div> -->
             <div class="col-lg-8 offset-lg-2 min-vh-100 p-5 center-center">
-              <h5 class="up text-uppercase font-weight-bold" v-html="content.mission.microtitle"></h5>
-              <h2 class="up section-title" v-html="content.mission.title"></h2>
-              <div class="up mb-4" v-html="content.mission.text"></div>
+              <h5 data-aos="fade-up" class="up text-uppercase font-weight-bold" v-html="content.mission.microtitle"></h5>
+              <h2 data-aos="fade-up" data-aos-delay="200" class="section-title" v-html="content.mission.title"></h2>
+              <div data-aos="fade-up" data-aos-delay="400" class="up mb-4" v-html="content.mission.text"></div>
               <a href="#services-intro">
-                <button role="button" class="up btn btn-info" v-html="content.servicesIntro.btn"></button>
+                <button data-aos="fade-up" data-aos-delay="600" role="button" class="up btn btn-info" v-html="content.servicesIntro.btn"></button>
               </a>
             </div>
             <div class="col-lg-12 p-0 center-center">
               <img
                 :src="`https://content.jenmasonconsulting.ca/cockpit/storage/uploads/${content.mission.img.path}`"
+                data-aos="fade"
                 width="1000"
                 height="600"
                 class="img-full min-vh-50"
@@ -142,13 +130,13 @@ onMounted(() => {
 
           <div class="row min-vh-100 bg-linen" id="services-intro">
             <div class="col-lg-8 offset-lg-2 min-vh-100 p-5 center-center">
-              <h5 class="up text-uppercase font-weight-bold"
+              <h5 data-aos="fade-up" class="up text-uppercase font-weight-bold"
               v-html="content.servicesIntro.microtitle"
               ></h5>
-              <h2 class="up section-title" v-html="content.servicesIntro.title"></h2>
-              <div class="up mb-4" v-html="content.servicesIntro.text"></div>
+              <h2 data-aos="fade-up" data-aos-delay="200" class="up section-title" v-html="content.servicesIntro.title"></h2>
+              <div data-aos="fade-up" data-aos-delay="400" class="up mb-4" v-html="content.servicesIntro.text"></div>
               <a href="#services">
-                <button role="button" class="up btn btn-info" v-html="content.servicesIntro.btn"></button>
+                <button data-aos="fade-up" data-aos-delay="600" role="button" class="up btn btn-info" v-html="content.servicesIntro.btn"></button>
               </a>
             </div>
           </div>

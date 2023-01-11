@@ -60,14 +60,13 @@
 </template>
 
 <script setup>
+import { onMounted } from "vue"
+import AOS from 'aos'
+import { storeToRefs } from 'pinia'
+import { useTextStore } from '../stores/text'
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
-import { onMounted } from "vue";
-import AOS from 'aos'
-
-import { storeToRefs } from 'pinia'
-import { useTextStore } from '../stores/text'
 
 const { content, loading, error } = storeToRefs(useTextStore())
 const { fetchData } = useTextStore()
@@ -82,23 +81,24 @@ onMounted(() => {
         easing: 'ease-in-out-cubic', // default easing for AOS animations
         mirror: true, // whether elements should animate out while scrolling past them
     })
-//   gsap.from("#heading", {
-//     duration: 1.5,
-//     x: 100,
-//   });
-  gsap.utils.toArray(".up").forEach(layer => {
-  gsap.from(layer, {
-    y: 120,
-    opacity: 0,
-    
-    duration: 0.6,
-    ease: "power1.inOut",
-    scrollTrigger: {
-      trigger: layer,
-      scrub: 1
-    }
-  });
-})
+
+gsap.utils.toArray(".up").forEach(layer => {
+            gsap.from(layer, {
+                y: 70,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.5,
+                ease: "power2.inOut",
+                scrollTrigger: {
+                trigger: layer,
+                // scrub: true,
+                toggleActions: 'play none none reverse',
+                start: "top bottom",
+                // start:"top 100%",
+                end:"bottom top",
+            }
+            });
+        })
 })
 </script>
 
