@@ -156,7 +156,7 @@ onMounted(() => {
           <img data-aos="fade" width="1000" height="600" :src="`https://content.jenmasonconsulting.ca/cockpit/storage/uploads/${item.img.path}`" class="w-100 h-100 object-fit" alt="" />
         </div>
       </div>
-      <div v-else class="w-100 d-flex flex-wrap flex-md-nowwrap">
+      <div v-else class="w-100 d-flex flex-wrap flex-md-nowwrap bg-linen">
         <div class="col-lg-6 min-vh-50 p-0">
           <img data-aos="fade" width="1000" height="600" :src="`https://content.jenmasonconsulting.ca/cockpit/storage/uploads/${item.img.path}`" class="w-100 h-100 object-fit" alt="" />
         </div>
@@ -178,7 +178,7 @@ onMounted(() => {
 
       <!-- about -->
 
-      <div id="about" class="row min-vh-100 bg-linen">
+      <div id="about" class="row min-vh-100 bg-light">
         <div class="col-lg-8 offset-lg-2 min-vh-100 p-5 center-center">
           <h5 data-aos="fade-up" class="text-uppercase font-weight-bold" v-html="content.about.microtitle"></h5>
           <h2 data-aos="fade-up" data-aos-delay="200" class="up section-title" v-html="content.about.title"></h2>
