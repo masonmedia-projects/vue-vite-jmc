@@ -214,7 +214,7 @@ onMounted(() => {
                 <button role="button" class="btn btn-info me-2" v-html="content.contact.btn"></button>
                 </a>
               <button class="mt-3 mt-lg-0 btn btn-light"
-                data-bs-toggle="modal" data-bs-target="#signup2">Newsletter</button>
+                data-bs-toggle="modal" data-bs-target="#exampleModal">Newsletter</button>
               </div>
             </div>
           <div class="col-sm-12 p-0 position-relative">
@@ -225,8 +225,28 @@ onMounted(() => {
           </div>
         </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
         <!-- Benchmark newsletter signup Modal -->
-        <div class="modal fade" id="signup2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- <div class="modal fade" id="signup2" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
@@ -238,7 +258,7 @@ onMounted(() => {
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- footer -->
 
