@@ -244,7 +244,7 @@ onMounted(() => {
 
         <footer>
           <div class="row p-0 m-0 bg-dark">
-            <div class="col-lg-12 p-5 center-center" data-aos="fade">
+            <div class="col-lg-12 p-5 center-center">
               <button type="button" role="button" class="btn btn-outline-light" v-html="content.footer" disabled></button>
             </div>
           </div>
