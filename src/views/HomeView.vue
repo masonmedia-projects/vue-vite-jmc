@@ -50,11 +50,11 @@ onMounted(() => {
 
       <!-- loading, error messages -->
 
-      <h1 v-if="loading" class='col-lg-12 center-center p-5 min-vh-100 text-secondary fw-light'>Welcome to Jen Mason Consulting</h1>
-      <h1 v-if="error" class="col-lg-12 center-center text-secondary p-5 min-vh-100 fw-light">{{ error.message }}</h1>
+      <h1 v-if="loading" data-aos="fade" class='col-lg-12 center-center p-5 min-vh-100 text-secondary fw-light'>Welcome to Jen Mason Consulting</h1>
+      <h1 v-if="error" data-aos="fade" class="col-lg-12 center-center text-secondary p-5 min-vh-100 fw-light">{{ error.message }}</h1>
 
       <!-- main content -->
-      <div class v-if="content.hero">
+      <div class v-if="content.hero" data-aos="fade">
         <div class="container-fluid p-0">
 
           <!-- hero -->
