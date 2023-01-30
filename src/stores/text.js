@@ -17,7 +17,7 @@ export const useTextStore = defineStore({
       this.content = []
       this.loading = true
       try {
-        this.content = await fetch('https://content.jenmasonconsulting.ca/cockpit/api/content/item/home_page')
+        this.content = await fetch(import.meta.env.VITE_API_ENDPOINT)
         .then((response) => response.json()) 
       } catch (error) {
         this.error = error

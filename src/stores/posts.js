@@ -18,7 +18,7 @@ export const usePostStore = defineStore({
       this.posts = []
       this.loading = true
       try {
-        this.posts = await fetch('https://content.jenmasonconsulting.ca/cockpit/api/content/item/home_page')
+        this.posts = await fetch(import.meta.env.VITE_API_ENDPOINT)
         // this.posts = await fetch('https://jsonplaceholder.typicode.com/posts')
         .then((response) => response.json()) 
       } catch (error) {

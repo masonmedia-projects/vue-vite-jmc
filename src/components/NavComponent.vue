@@ -37,7 +37,8 @@ fetchData()
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
             <li class="nav-item pe-2" v-for="(item, index) in content.nav.slice(1, 5)" :key="index">
-              <a class="nav-link" aria-current="page" :href="item.url" v-html="item.title"></a>
+              <a class="nav-link" aria-current="page" 
+              :href="item.url" v-html="item.title"></a>
             </li>
             <li class="nav-item">
               <button class="mt-3 mt-lg-0 btn btn-outline-light fw-bold"

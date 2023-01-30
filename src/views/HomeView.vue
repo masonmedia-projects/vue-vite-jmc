@@ -210,12 +210,12 @@ onMounted(() => {
             <h1 data-aos="fade-up" data-aos-delay="200" class="section-title" v-html="content.contact.title"></h1>
             <p data-aos="fade-up" data-aos-delay="400" class="mb-4" v-html="content.contact.text"></p>
             <div data-aos="fade-up" data-aos-delay="600" class="d-flex">
-                <a :href="content.contactbtnLink">
+              <a :href="content.contactbtnLink">
                 <button role="button" class="btn btn-info me-2" v-html="content.contact.btn"></button>
-                </a>
-              <button class="mt-3 mt-lg-0 btn btn-light"
-                data-bs-toggle="modal" data-bs-target="#exampleModal">Newsletter</button>
-              </div>
+              </a>
+              <button class="btn btn-light"
+              data-bs-toggle="modal" data-bs-target="#exampleModal">Newsletter</button>
+            </div>
             </div>
           <div class="col-sm-12 p-0 position-relative">
             <img 
