@@ -6,4 +6,18 @@
 
 ## Intro
 
-Repository for redesign of official website for Jen Mason Consulting. Tech stack uses Vue3, Vite, and Bootstrap 5.
+Repository for redesign of official website for Jen Mason Consulting. Tech stack includes Vue3, Vite, Bootstrap 5, and Cockpit CMS.
+
+## Details
+
+Clone repo
+`npm install`
+
+### Build 
+
+`npm run build`
+
+### Manual Deploy
+
+Zip `/dist` folder
+Deploy contents to `public_html`
