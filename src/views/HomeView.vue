@@ -209,7 +209,7 @@ onMounted(() => {
             <h1 data-aos="fade-up" data-aos-delay="200" class="section-title" v-html="content.contact.title"></h1>
             <p data-aos="fade-up" data-aos-delay="400" class="mb-4" v-html="content.contact.text"></p>
             <div data-aos="fade-up" data-aos-delay="600" class="d-flex">
-              <a :href="content.contactbtnLink">
+              <a :href="content.contact.btnLink">
                 <button role="button" class="btn btn-info me-2" v-html="content.contact.btn"></button>
               </a>
               <button class="btn btn-light"
