@@ -1,6 +1,6 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/jenma043/dev.jenmasonconsulting.ca/
-    # - /bin/cp -R * $DEPLOYPATH
-    - /bin/cp -R dist/* $DEPLOYPATH
+# ---
+# deployment:
+#   tasks:
+#     - export DEPLOYPATH=/home/jenma043/dev.jenmasonconsulting.ca/
+#     # - /bin/cp -R * $DEPLOYPATH
+#     - /bin/cp -R dist/* $DEPLOYPATH
