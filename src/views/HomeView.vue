@@ -175,6 +175,11 @@ onMounted(() => {
         </div>
       </div>
 
+      <!-- Individual retreats section delete
+        QUIET THE INNER NOISE
+        Retreats in Natural Settings: Individuals
+        Starting in the spring of 2023, I will be offering lodge-based wilderness retreats for individual registrants. Inspired and uplifted by beautiful natural settings, participants will develop their capacity to listen—to the non-human natural world, to others, and to themselves. More information to come. -->
+
       <!-- about -->
 
       <div id="about" class="row min-vh-100 bg-light">
