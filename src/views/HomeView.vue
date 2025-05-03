@@ -133,10 +133,10 @@ onMounted(() => {
             </div>
           </div>
 
-        <!-- services array -->
+        <!-- services array: remove systems lab using slice -->
 
       <div class="row min-vh-100" id="services"
-      v-for="(item, index) in content.services" :key="index">
+      v-for="(item, index) in content.services.slice(0, -1)" :key="index">
       <div v-if="index % 2 === 0" class="w-100 d-flex flex-wrap flex-md-nowwrap">
         <div class="col-lg-6 min-50 align-left-center my-auto p-5 m-0 order-2 order-lg-1">
           <h6 data-aos="fade-up" class="text-uppercase small" v-html="item.microtitle"></h6>

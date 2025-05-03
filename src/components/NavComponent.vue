@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import AOS from 'aos'
 import { storeToRefs } from 'pinia'
 import { useTextStore } from '../stores/text'
@@ -7,7 +7,30 @@ import { useTextStore } from '../stores/text'
 const { content, loading, error } = storeToRefs(useTextStore())
 const { fetchData } = useTextStore()
 
+const signup = ref([])
+
 fetchData()
+
+  // fetch('9BA68FF0-56CF-4E79-B18E-0B8D8F408353')
+  var myHeaders = new Headers();
+myHeaders.append("AuthToken", "9BA68FF0-56CF-4E79-B18E-0B8D8F408353");
+myHeaders.append("Content-Type", "application/json");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+fetch("https://clientapi.benchmarkemail.com/SignupForm/1710452/Code/Button", requestOptions)
+// fetch("https://clientapi.benchmarkemail.com/SignupForm/{{ID}}/Code/Preview", requestOptions)
+  .then(response => response.json())
+  .then(result => {
+    signup.value = result
+    console.log(result)
+
+  })
+  .catch(error => console.log('error', error));
 
 onMounted(() => {
   AOS.init({
@@ -17,6 +40,14 @@ onMounted(() => {
     easing: 'ease-in-out-sine', // default easing for AOS animations
     mirror: true, // whether elements should animate out while scrolling past them
   })
+
+  // let benchmarkemail = document.createElement('script')
+  // benchmarkemail.setAttribute('src', 'https://lb.benchmarkemail.com//listbuilder/signupnew?IkfHTmyPVq%252BnuC4b%252BprMCP5pwVnAjsSIWFkuV4uvWyDtO5iNRn8gS049TyW7spdJ')
+  // benchmarkemail.setAttribute('async', 'true');
+  // benchmarkemail.setAttribute('defer', 'true');
+  // // document.head.appendChild(benchmarkemail);
+  // signup.value = benchmarkemail
+
 })
 </script> 
 
@@ -59,8 +90,10 @@ onMounted(() => {
             <h1 class="modal-title fs-5" id="exampleModalLabel">JMC Newsletter Signup</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body p-2">
-            <iframe style="width:100%; min-height:50vh;" allowfullscreen src="https://lb.benchmarkemail.com//listbuilder/signupnew?IkfHTmyPVq%252BnuC4b%252BprMCP5pwVnAjsSIWFkuV4uvWyDtO5iNRn8gS049TyW7spdJ"></iframe>
+          <div class="modal-body p-2" v-for="(item, index) in signup" :key="index">
+            <div class="" v-html="item.Data"></div>
+            <!-- {{ signup }} -->
+            <!-- <iframe style="width:100%; min-height:50vh;" allowfullscreen src="https://lb.benchmarkemail.com//listbuilder/signupnew?IkfHTmyPVq%252BnuC4b%252BprMCP5pwVnAjsSIWFkuV4uvWyDtO5iNRn8gS049TyW7spdJ"></iframe> -->
           </div>
         </div>
       </div>
