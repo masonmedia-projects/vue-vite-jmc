@@ -4,7 +4,7 @@ import AOS from 'aos'
 import { storeToRefs } from 'pinia'
 import { useTextStore } from '../stores/text'
 
-const { content, loading, error } = storeToRefs(useTextStore())
+const { content } = storeToRefs(useTextStore())
 const { fetchData } = useTextStore()
 
 const signup = ref([])
