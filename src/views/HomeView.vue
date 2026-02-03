@@ -217,8 +217,6 @@ onMounted(() => {
               <a :href="content.contact.btnLink">
                 <button role="button" class="btn btn-info me-2" v-html="content.contact.btn"></button>
               </a>
-              <button class="btn btn-light"
-              data-bs-toggle="modal" data-bs-target="#exampleModal">Newsletter</button>
             </div>
             </div>
           <div class="col-sm-12 p-0 position-relative">

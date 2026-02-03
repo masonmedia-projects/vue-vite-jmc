@@ -73,10 +73,10 @@ onMounted(() => {
               <a class="nav-link" aria-current="page" 
               :href="item.url" v-html="item.title"></a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <button class="mt-3 mt-lg-0 btn btn-outline-light fw-bold"
               data-bs-toggle="modal" data-bs-target="#exampleModal">newsletter</button>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
